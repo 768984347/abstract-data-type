@@ -16,6 +16,7 @@ import "fmt"
 @method IsEmpty 判断队列是否为空
 @method IsFull 判断队列是否已满
 @method getRealIndex 如果index超过length返回正确的index(超过部分再从头开始计算)
+@method GetLength 获取队列长度
 @method ShowList 调试方法
  */
 
@@ -107,6 +108,10 @@ func (this *MyCircularQueue) getRealIndex(index int) int {
 
 func (this *MyCircularQueue) ShowList() {
 	fmt.Printf("%v", this.data)
+}
+
+func (this *MyCircularQueue) GetLength() int {
+	return this.length
 }
 
 /**

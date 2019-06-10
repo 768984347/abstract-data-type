@@ -13,9 +13,10 @@ import (
 @method Init 初始化栈
 @method Push 入栈
 @method Pop 出栈
-@method IsEmpty 判断队列是否为空
-@method IsFull 判断队列是否已满
-@method GetLength 获取队列长度
+@method IsEmpty 判断栈是否为空
+@method IsFull 判断栈是否已满
+@method GetLength 获取栈长度
+@method Top 获取栈首个元素
 */
 
 type Stack struct {
@@ -29,7 +30,7 @@ func Init(maxLen int) *Stack {
 
 func (this *Stack) Pop() (int, error) {
 	if this.IsEmpty() {
-		return -1, errors.New("stack is empty")
+		return -1, errors.New("empty stack")
 	}
 	defer func() {
 		this.len--
@@ -62,4 +63,11 @@ func (this *Stack) IsFull() bool {
 
 func (this *Stack) GetLength() int {
 	return this.len
+}
+
+func (this *Stack) Top() int {
+	if this.IsEmpty() {
+		panic("empty stack")
+	}
+	return this.data[this.len - 1]
 }

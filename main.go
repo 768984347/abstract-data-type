@@ -1,63 +1,59 @@
 package main
 
 import (
-	stack2 "abstract_data_type/stack_LIFO"
 	"fmt"
+	"strconv"
 )
 
 func main() {
-	stack := stack2.Init(3)
-	suc := stack.Push(2)
-	fmt.Println("2 push status = ", suc)
-	num, err := stack.Pop()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("pop num is:", num)
-	suc = stack.Push(3)
-	fmt.Println("3 push status = ", suc)
-	suc = stack.Push(4)
-	fmt.Println("4 push status = ", suc)
-	num, err = stack.Pop()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("pop num is:", num)
+	a := []int{1,2,3}
+	fmt.Println(a[:len(a) - 2])
+	fmt.Println(evalRPN([]string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}))
+}
 
-	suc = stack.Push(5)
-	fmt.Println("5 push status = ", suc)
-	suc = stack.Push(6)
-	fmt.Println("6 push status = ", suc)
-	suc = stack.Push(7)
-	fmt.Println("7 push status = ", suc)
+func evalRPN(tokens []string) int {
+	var stackStr []string
+	var res int64
 
-	num, err = stack.Pop()
-	if err != nil {
-		panic(err)
+	if len(tokens) < 2 {
+		res, _ = strconv.ParseInt(tokens[0], 0, 0)
+		return int(res)
 	}
-	fmt.Println("pop num is:", num)
 
-	num, err = stack.Pop()
-	if err != nil {
-		panic(err)
+	for i := 0; i < len(tokens); i++ {
+		switch tokens[i] {
+		case "+":
+			num1, _ := strconv.ParseInt(stackStr[len(stackStr) - 1], 0, 0)
+			num2, _ := strconv.ParseInt(stackStr[len(stackStr) - 2], 0, 0)
+			res = num2 + num1
+			stackStr = stackStr[:len(stackStr) - 2]
+			stackStr = append(stackStr, strconv.FormatInt(res, 10))
+			break
+		case "-":
+			num1, _ := strconv.ParseInt(stackStr[len(stackStr) - 1], 0, 0)
+			num2, _ := strconv.ParseInt(stackStr[len(stackStr) - 2], 0, 0)
+			res = num2 - num1
+			stackStr = stackStr[:len(stackStr) - 2]
+			stackStr = append(stackStr, strconv.FormatInt(res, 10))
+			break
+		case "*":
+			num1, _ := strconv.ParseInt(stackStr[len(stackStr) - 1], 0, 0)
+			num2, _ := strconv.ParseInt(stackStr[len(stackStr) - 2], 0, 0)
+			res = num2 * num1
+			stackStr = stackStr[:len(stackStr) - 2]
+			stackStr = append(stackStr, strconv.FormatInt(res, 10))
+			break
+		case "/":
+			num1, _ := strconv.ParseInt(stackStr[len(stackStr) - 1], 0, 0)
+			num2, _ := strconv.ParseInt(stackStr[len(stackStr) - 2], 0, 0)
+			res = num2 / num1
+			stackStr = stackStr[:len(stackStr) - 2]
+			stackStr = append(stackStr, strconv.FormatInt(res, 10))
+			break
+		default:
+			stackStr = append(stackStr, tokens[i])
+		}
 	}
-	fmt.Println("pop num is:", num)
 
-	num, err = stack.Pop()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("pop num is:", num)
-
-	num, err = stack.Pop()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("pop num is:", num)
-
-	num, err = stack.Pop()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("pop num is:", num)
+	return int(res)
 }

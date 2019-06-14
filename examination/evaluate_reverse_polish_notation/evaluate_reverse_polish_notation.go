@@ -2,6 +2,18 @@ package evaluate_reverse_polish_notation
 
 import "strconv"
 
+/**
+逆波兰表达式求值
+根据逆波兰表示法，求表达式的值。
+有效的运算符包括 +, -, *, / 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。
+输入: ["2", "1", "+", "3", "*"]
+输出: 9
+解释: ((2 + 1) * 3) = 9
+@实现原理
+利用栈的后进先出原理,在循环中如果是运算符则将栈顶2个元素进行计算再入栈,否则直接将数字入栈
+@method evaluate_reverse_polish_notation
+@leetcode https://leetcode-cn.com/problems/evaluate-reverse-polish-notation
+*/
 func evalRPN(tokens []string) int {
 	var stackStr []string
 	var res int64

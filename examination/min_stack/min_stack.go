@@ -16,6 +16,7 @@ import "fmt"
 @method GetMin O(n)获取最小元素
 @method GetLength 获取栈长度
 @method Top 获取栈首个元素
+@author pxb
 @leetcode https://leetcode-cn.com/explore/learn/card/queue-stack/218/stack-last-in-first-out-data-structure/877/
 */
 

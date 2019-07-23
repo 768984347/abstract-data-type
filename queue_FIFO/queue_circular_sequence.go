@@ -20,6 +20,7 @@ import "fmt"
 @method getRealIndex 如果index超过length返回正确的index(超过部分再从头开始计算)
 @method GetLength 获取队列长度
 @method ShowList 调试方法
+@author pxb
  */
 
 type MyCircularQueue struct {

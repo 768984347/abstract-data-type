@@ -12,6 +12,7 @@ package queue
 @method IsDataExists 检查数据是否在队列中存在
 @method GetFirst 获取位于队列首的数据
 @method GetLength 获取队列当前的元素数量
+@author pxb
  */
 
 import "errors"

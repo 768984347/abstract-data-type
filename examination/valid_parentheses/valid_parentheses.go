@@ -6,6 +6,7 @@ package valid_parentheses
 @实现原理
 循环中不是结尾符的字符入栈,如果是结尾符则与栈顶的字符进行匹配
 @method isValid
+@author pxb
 @leetcode https://leetcode-cn.com/explore/learn/card/queue-stack/218/stack-last-in-first-out-data-structure/878/
 */
 

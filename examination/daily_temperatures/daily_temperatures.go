@@ -6,6 +6,7 @@ package daily_temperatures
 例如，给定一个列表 temperatures = [73, 74, 75, 71, 69, 72, 76, 73]，你的输出应该是 [1, 1, 4, 2, 1, 1, 0, 0]。
 @实现原理
 利用栈的后进先出原理在循环中比对栈顶的大小(如果栈为空将给定切片的第一个元素入栈作为栈顶),如果大于栈顶则栈顶出栈将index差(天数)记录否则入栈继续寻找下一个大于栈顶的元素
+@author pxb
 @method dailyTemperatures
 @leetcode https://leetcode-cn.com/problems/daily-temperatures
 */

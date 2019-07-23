@@ -14,7 +14,8 @@
 │   │  ├─daily_temperatures 每日温度 (https://leetcode-cn.com/problems/daily-temperatures)
 │   │  ├─evaluate_reverse_polish_notation 逆波兰表达式求值 (https://leetcode-cn.com/problems/evaluate-reverse-polish-notation)
 │   ├─数组
-│   │  ├─find_pivot_index 寻找数组的中心索引 
+│   │  ├─find_pivot_index 寻找数组的中心索引 (https://leetcode-cn.com/problems/find-pivot-index)
+│   │  ├─largest_number_at_least_twice_of_others 至少是其他数字两倍的最大数 (https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others)
 ├─queue_FIFO 队列
 │       queue.go 队列
 │       queue_circular_sequence.go 循环队列

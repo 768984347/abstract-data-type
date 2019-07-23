@@ -17,6 +17,7 @@ import (
 @method IsFull 判断栈是否已满
 @method GetLength 获取栈长度
 @method Top 获取栈首个元素
+@author pxb
 */
 
 type Stack struct {

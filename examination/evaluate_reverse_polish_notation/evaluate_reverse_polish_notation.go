@@ -11,6 +11,7 @@ import "strconv"
 解释: ((2 + 1) * 3) = 9
 @实现原理
 利用栈的后进先出原理,在循环中如果是运算符则将栈顶2个元素进行计算再入栈,否则直接将数字入栈
+@author pxb
 @method evaluate_reverse_polish_notation
 @leetcode https://leetcode-cn.com/problems/evaluate-reverse-polish-notation
 */

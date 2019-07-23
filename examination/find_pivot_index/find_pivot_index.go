@@ -15,6 +15,7 @@ nums = [1, 7, 3, 6, 5, 6]
 首先计算出整个数组的和sum(O(n)),再通过记录下循环index左侧当前的和prevSum与sum进行比对,
 如果相等则当前index就是中心索引,否则sum减去当前index的值而prevSum增加当前index的值继续循环比对
 需要排除数组是空,右侧的和为0的特殊情况
+@author pxb
 @method pivotIndex
 @leetcode https://leetcode-cn.com/problems/find-pivot-index
 */

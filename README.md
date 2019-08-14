@@ -17,6 +17,7 @@
 │   │  ├─find_pivot_index 寻找数组的中心索引 (https://leetcode-cn.com/problems/find-pivot-index)
 │   │  ├─largest_number_at_least_twice_of_others 至少是其他数字两倍的最大数 (https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others)
 │   │  ├─plus_one 加一 (https://leetcode-cn.com/problems/plus-one)
+│   │  ├─diagonal_traverse 对角线遍历 (https://leetcode-cn.com/problems/diagonal-traverse/)
 ├─queue_FIFO 队列
 │       queue.go 队列
 │       queue_circular_sequence.go 循环队列

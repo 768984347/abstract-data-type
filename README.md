@@ -22,6 +22,7 @@
 │   │  ├─pascals_triangle 杨辉三角 (https://leetcode-cn.com/problems/pascals-triangle/)
 │   │  ├─add_binary 二进制求和 (https://leetcode-cn.com/problems/add-binary/)
 │   │  ├─implement_strstr 实现strStr函数 (https://leetcode-cn.com/problems/implement-strstr/)
+│   │  ├─longest_common_prefix 最长公共前缀 (https://leetcode-cn.com/problems/longest-common-prefix)
 ├─queue_FIFO 队列
 │       queue.go 队列
 │       queue_circular_sequence.go 循环队列

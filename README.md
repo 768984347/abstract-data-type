@@ -23,6 +23,9 @@
 │   │  ├─add_binary 二进制求和 (https://leetcode-cn.com/problems/add-binary/)
 │   │  ├─implement_strstr 实现strStr函数 (https://leetcode-cn.com/problems/implement-strstr/)
 │   │  ├─longest_common_prefix 最长公共前缀 (https://leetcode-cn.com/problems/longest-common-prefix)
+│   │  ├─reverse_string 反转字符串 (https://leetcode-cn.com/problems/reverse-string)
+│   │  ├─two_sum_ii_input_array_is_sorted 两数之和 II - 输入有序数组 (https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted)
+│   │  ├─array_partition_i 数组拆分I (https://leetcode-cn.com/problems/array-partition-i)
 ├─queue_FIFO 队列
 │       queue.go 队列
 │       queue_circular_sequence.go 循环队列

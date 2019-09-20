@@ -29,6 +29,7 @@
 │   │  ├─remove_element 移除元素 (https://leetcode-cn.com/problems/remove-element)
 │   │  ├─max_consecutive_ones 最大连续1的个数 (https://leetcode-cn.com/problems/max-consecutive-ones)
 │   │  ├─minimum_size_subarray_sum 长度最小的子数组 (https://leetcode-cn.com/problems/minimum-size-subarray-sum)
+│   │  ├─rotate_array 旋转数组 (https://leetcode-cn.com/problems/rotate-array)
 ├─queue_FIFO 队列
 │       queue.go 队列
 │       queue_circular_sequence.go 循环队列

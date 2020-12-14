@@ -21,54 +21,55 @@ import (
 */
 
 type Stack struct {
-	data []int
-	len int
+	data []interface{}
+	len  int
+	size int
 }
 
 func Init(maxLen int) *Stack {
-	return &Stack{make([]int, maxLen), 0}
+	return &Stack{make([]interface{}, maxLen), 0, maxLen}
 }
 
-func (this *Stack) Pop() (int, error) {
-	if this.IsEmpty() {
-		return -1, errors.New("empty stack")
+func (s *Stack) Pop() (interface{}, error) {
+	if s.IsEmpty() {
+		return nil, errors.New("empty stack")
 	}
 	defer func() {
-		this.len--
+		s.len--
 	}()
-	return this.data[this.len - 1], nil
+	return s.data[s.len-1], nil
 }
 
-func (this *Stack) Push(number int) bool {
-	if this.IsFull() {
+func (s *Stack) Push(item interface{}) bool {
+	if s.IsFull() {
 		return false
 	}
-	this.data[this.len] = number
-	this.len++
+	s.data[s.len] = item
+	s.len++
 	return true
 }
 
-func (this *Stack) IsEmpty() bool {
-	if this.len > 0 {
+func (s *Stack) IsEmpty() bool {
+	if s.len > 0 {
 		return false
 	}
 	return true
 }
 
-func (this *Stack) IsFull() bool {
-	if this.len >= len(this.data) {
+func (s *Stack) IsFull() bool {
+	if s.len >= s.size {
 		return true
 	}
 	return false
 }
 
-func (this *Stack) GetLength() int {
-	return this.len
+func (s *Stack) GetLength() int {
+	return s.len
 }
 
-func (this *Stack) Top() int {
-	if this.IsEmpty() {
+func (s *Stack) Top() interface{} {
+	if s.IsEmpty() {
 		panic("empty stack")
 	}
-	return this.data[this.len - 1]
+	return s.data[s.len-1]
 }

@@ -13,12 +13,12 @@ package queue
 @method GetFirst 获取位于队列首的数据
 @method GetLength 获取队列当前的元素数量
 @author pxb
- */
+*/
 
 import "errors"
 
 type Queue struct {
-	data []interface{}
+	data       []interface{}
 	firstIndex int
 }
 

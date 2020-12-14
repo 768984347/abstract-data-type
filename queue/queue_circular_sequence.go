@@ -21,12 +21,12 @@ import "fmt"
 @method GetLength 获取队列长度
 @method ShowList 调试方法
 @author pxb
- */
+*/
 
 type MyCircularQueue struct {
-	data []int
+	data       []int
 	firstIndex int
-	length int
+	length     int
 }
 
 /** Initialize your data structure here. Set the size of the queue to be k. */
@@ -35,86 +35,86 @@ func Constructor(k int) MyCircularQueue {
 }
 
 /** Insert an element into the circular queue. Return true if the operation is successful. */
-func (this *MyCircularQueue) EnQueue(value int) bool {
-	if this.length >= len(this.data) {
+func (queue *MyCircularQueue) EnQueue(value int) bool {
+	if queue.length >= len(queue.data) {
 		return false
 	}
 
 	defer func() {
-		this.length++
+		queue.length++
 	}()
 
-	nextIndex := this.getRealIndex(this.firstIndex + this.length)
-	this.data[nextIndex] = value
+	nextIndex := queue.getRealIndex(queue.firstIndex + queue.length)
+	queue.data[nextIndex] = value
 
 	return true
 }
 
 /** Delete an element from the circular queue. Return true if the operation is successful. */
-func (this *MyCircularQueue) DeQueue() bool {
-	if this.IsEmpty() {
+func (queue *MyCircularQueue) DeQueue() bool {
+	if queue.IsEmpty() {
 		return false
 	}
 	defer func() { //将长度-1
-		this.length--
-		if this.IsEmpty() {
-			this.firstIndex = 0
+		queue.length--
+		if queue.IsEmpty() {
+			queue.firstIndex = 0
 		} else {
-			this.firstIndex = this.getRealIndex(this.firstIndex + 1)
+			queue.firstIndex = queue.getRealIndex(queue.firstIndex + 1)
 		}
 	}()
 
-	this.data[this.firstIndex] = 0
+	queue.data[queue.firstIndex] = 0
 
 	return true
 }
 
 /** Get the front item from the queue. */
-func (this *MyCircularQueue) Front() int {
-	if this.IsEmpty() {
+func (queue *MyCircularQueue) Front() int {
+	if queue.IsEmpty() {
 		return -1
 	}
-	return this.data[this.firstIndex]
+	return queue.data[queue.firstIndex]
 }
 
 /** Get the last item from the queue. */
-func (this *MyCircularQueue) Rear() int {
-	if this.IsEmpty() {
+func (queue *MyCircularQueue) Rear() int {
+	if queue.IsEmpty() {
 		return -1
 	}
-	index := this.getRealIndex(this.length + this.firstIndex - 1)
-	return this.data[index]
+	index := queue.getRealIndex(queue.length + queue.firstIndex - 1)
+	return queue.data[index]
 }
 
 /** Checks whether the circular queue is empty or not. */
-func (this *MyCircularQueue) IsEmpty() bool {
-	if this.length > 0 {
+func (queue *MyCircularQueue) IsEmpty() bool {
+	if queue.length > 0 {
 		return false
 	}
 	return true
 }
 
 /** Checks whether the circular queue is full or not. */
-func (this *MyCircularQueue) IsFull() bool {
-	if this.length >= len(this.data) {
+func (queue *MyCircularQueue) IsFull() bool {
+	if queue.length >= len(queue.data) {
 		return true
 	}
 	return false
 }
 
-func (this *MyCircularQueue) getRealIndex(index int) int {
-	if index >= len(this.data) {
-		return index - len(this.data)
+func (queue *MyCircularQueue) getRealIndex(index int) int {
+	if index >= len(queue.data) {
+		return index - len(queue.data)
 	}
 	return index
 }
 
-func (this *MyCircularQueue) ShowList() {
-	fmt.Printf("%v", this.data)
+func (queue *MyCircularQueue) ShowList() {
+	fmt.Printf("%v", queue.data)
 }
 
-func (this *MyCircularQueue) GetLength() int {
-	return this.length
+func (queue *MyCircularQueue) GetLength() int {
+	return queue.length
 }
 
 /**

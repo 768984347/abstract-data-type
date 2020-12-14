@@ -20,9 +20,9 @@ import (
 */
 
 type Stack struct {
-	data []interface{}
-	len  int
-	size int
+	data     []interface{}
+	count    int //当前栈内数据数量
+	capacity int //栈最大容量
 }
 
 func Init(maxLen int) *Stack {
@@ -33,42 +33,41 @@ func (s *Stack) Pop() (interface{}, error) {
 	if s.IsEmpty() {
 		return nil, errors.New("empty stack")
 	}
-	defer func() {
-		s.len--
-	}()
-	return s.data[s.len-1], nil
+	res := s.data[s.count-1]
+	s.count--
+	return res, nil
 }
 
 func (s *Stack) Push(item interface{}) bool {
 	if s.IsFull() {
 		return false
 	}
-	s.data[s.len] = item
-	s.len++
+	s.data[s.count] = item
+	s.count++
 	return true
 }
 
 func (s *Stack) IsEmpty() bool {
-	if s.len > 0 {
+	if s.count > 0 {
 		return false
 	}
 	return true
 }
 
 func (s *Stack) IsFull() bool {
-	if s.len >= s.size {
+	if s.count >= s.capacity {
 		return true
 	}
 	return false
 }
 
 func (s *Stack) GetLength() int {
-	return s.len
+	return s.count
 }
 
 func (s *Stack) Top() interface{} {
 	if s.IsEmpty() {
 		panic("empty stack")
 	}
-	return s.data[s.len-1]
+	return s.data[s.count-1]
 }

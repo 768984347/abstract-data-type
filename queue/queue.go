@@ -17,10 +17,10 @@ import "errors"
 
 type Queue struct {
 	data     []interface{}
-	head     int
-	tail     int
-	capacity int
-	count    int
+	head     int //头部指针
+	tail     int //尾部指针
+	capacity int //队列最大容量
+	count    int //当前队列元素数量
 }
 
 /**

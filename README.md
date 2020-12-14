@@ -35,5 +35,10 @@
 │       queue_circular_sequence.go 循环队列
 │     
 └─stack_LIFO 栈
-        stack.go 栈
+│       stack.go 栈
+│
+└─linked_list 链表
+│   ├─circular 循环链表
+│   ├─double 双向链表
+│   ├─singly 单链表
 ```

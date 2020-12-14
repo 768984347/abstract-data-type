@@ -8,8 +8,6 @@ import (
 栈
 @特性
 先进后出
-@实现原理
-只需要保留当前数组的len作为下一个插入的元素index即可
 @method Init 初始化栈
 @method Push 入栈
 @method Pop 出栈

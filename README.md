@@ -4,7 +4,10 @@
 ```
 │  main.go
 │  README.md
-│
+├─algorithms 算法
+│   ├─brute_force 串的匹配-BF算法
+│   ├─expression_evaluation 栈-表达式计算
+│   ├─lru LRU算法
 ├─examination 题目
 │   ├─队列
 │   │  ├─moving_average_from_data_stream 数据流中的移动平均值 

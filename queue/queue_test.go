@@ -42,7 +42,7 @@ func TestDeQueue(t *testing.T) {
 	display(queue)
 }
 
-func TestFrontier(t *testing.T) {
+func TestBound(t *testing.T) {
 	arr := [8]interface{}{"a", "b", "c", "d", "e", "f", "g"}
 	queue := Init(4)
 	for i := 0; i < 4; i++ {
